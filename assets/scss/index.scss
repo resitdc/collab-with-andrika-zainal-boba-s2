@@ -76,13 +76,13 @@ body, html {
     border-radius: 8px;
     white-space: nowrap;
     min-width: 20px;
+    padding: 12px;
     &.active {
       background-color: $secondary-color;
       color: #000;
     }
     &:not(:last-child) {
       margin-right: 8px;
-      padding: 12px;
     }
   }
 }
