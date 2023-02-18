@@ -1,0 +1,154 @@
+$primary-color: #89398F;
+$secondary-color: #ECA13F;
+$background-color: #F3F3F3;
+$navbar-height: 80px;
+$padding-x: 24px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "satoshi";
+  background: $background-color;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: $navbar-height;
+  background-color: $primary-color;
+  padding-bottom: 18px;
+  & .navbar {
+    $navbar-logo-size: 31px;
+    $navbar-item-size: 21px;
+    &-wrapper {
+      margin-top: 40px;
+      padding-left: $padding-x;
+      padding-right: $padding-x;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-logo {
+      width: $navbar-logo-size;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & img.navbar-logo-img {
+        width: $navbar-logo-size;
+        height: $navbar-logo-size;
+        border-radius: 100%;
+      }
+    }
+    &-title {
+      padding-left: 10px;
+      width: calc(calc(100% - #{$navbar-logo-size}) - #{$navbar-item-size});
+      color: #FFF;
+      font-weight: 700;
+    }
+    &-item {
+      width: $navbar-item-size;
+    }
+  }
+}
+
+#topics {
+  $padding-y: 24px;
+  display: flex;
+  width: 100%;
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  & .topic {
+    background-color: #FDF6ED;
+    color: #AAA;
+    border-radius: 8px;
+    white-space: nowrap;
+    min-width: 20px;
+    &.active {
+      background-color: $secondary-color;
+      color: #000;
+    }
+    &:not(:last-child) {
+      margin-right: 8px;
+      padding: 12px;
+    }
+  }
+}
+
+.main-page {
+  padding-top: $navbar-height;
+}
+
+.container {
+  width: 100%;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
+}
+
+#content {
+  background-color: #FFF;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  & .content {
+    &-header {
+      width: 100%;
+      margin-bottom: 10px;
+      &-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+      }
+      &-subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: #777;
+      }
+    }
+    &-body {
+      & .class-box {
+        $thumbnail-width: 62px;
+        width: 100%;
+        background: #F2F2F2;
+        border-radius: 16px;
+        display: flex;
+        padding: 12px;
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+        &-title {
+          font-weight: bold;
+          color: #000;
+          font-size: 16px;
+        }
+        &-description {
+          font-weight: normal;
+          color: #777;
+          font-size: 12px;
+        }
+        &-info {
+          width: calc(100% - #{$thumbnail-width});
+        }
+        &-thumbnail {
+          width: $thumbnail-width;
+          & img  {
+            width: $thumbnail-width;
+            height: $thumbnail-width;
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+  }
+}
